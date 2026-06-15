@@ -12,7 +12,7 @@ export default function Dashboard() {
   return (
     <div className="page">
       <div className="page-header">
-        <h1>Dashboard</h1>
+        <h1>Bem vindo</h1>
       </div>
 
       {/* Estatísticas */}
