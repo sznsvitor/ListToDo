@@ -1,0 +1,278 @@
+/* ===== TOKENS ===== */
+:root {
+  --green-100: #d4edda;
+  --green-400: #6aad78;
+  --green-600: #4a8a5a;
+  --green-700: #3a7048;
+
+  --gray-200: #e0e0e0;
+  --gray-600: #666;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,.1);
+
+  --font: "Segoe UI", system-ui, sans-serif;
+}
+
+/* ===== THEME ===== */
+:root,
+[data-theme="light"] {
+  --bg: #f0f0f0;
+  --bg-card: #fff;
+  --bg-form: #d4edda;
+  --bg-input: #fff;
+
+  --text: #222;
+  --text-muted: #666;
+  --border: #c8e0cc;
+}
+
+[data-theme="dark"] {
+  --bg: #1a1f1a;
+  --bg-card: #252b25;
+  --bg-form: #1e2d1e;
+  --bg-input: #2a342a;
+
+  --text: #e8f0e8;
+  --text-muted: #8fa08f;
+  --border: #2e402e;
+}
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: 0;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* ===== ACCESSIBILITY ===== */
+:focus-visible {
+  outline: 2px solid var(--green-400);
+  outline-offset: 2px;
+}
+
+/* ===== BRAND ===== */
+.brand,
+.brand-large {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.brand {
+  font-size: 1.4rem;
+}
+
+.brand-large {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.brand span,
+.brand-large span {
+  color: var(--green-400);
+}
+
+/* ===== LAYOUT ===== */
+.main-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary,
+.btn-secondary {
+  padding: .6rem 1rem;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: var(--green-600);
+}
+
+.btn-primary:hover {
+  background: var(--green-700);
+}
+
+.btn-secondary {
+  background: var(--gray-600);
+}
+
+.btn-back {
+  color: var(--text-muted);
+}
+
+/* ===== FORMS ===== */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: .75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-input);
+  color: var(--text);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.error-msg,
+.api-error {
+  color: #c0392b;
+  font-size: .85rem;
+}
+
+/* ===== BADGES ===== */
+.badge {
+  padding: .25rem .6rem;
+  border-radius: 999px;
+  font-size: .75rem;
+}
+
+.badge-done {
+  background: #d4edda;
+  color: #2d6a4a;
+}
+
+.badge-pending {
+  background: #fef3d4;
+  color: #7a5a10;
+}
+
+.badge-info {
+  background: var(--green-100);
+  color: var(--green-700);
+}
+
+/* ===== FILTERS ===== */
+.filters-bar {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+}
+
+.filter-tab {
+  padding: .4rem .8rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  background: var(--bg-card);
+  color: var(--text);
+}
+
+.filter-tab.active {
+  background: var(--green-600);
+  color: white;
+}
+
+/* ===== LOADING ===== */
+.loading-state {
+  text-align: center;
+  padding: 2rem;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  margin: auto;
+  border: 3px solid var(--border);
+  border-top-color: var(--green-600);
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== STATS ===== */
+.stats-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 120px;
+
+  padding: 1rem;
+
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.stat-label {
+  color: var(--text-muted);
+  font-size: .85rem;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 640px) {
+  .main-content {
+    padding: 1rem;
+  }
+
+  .filters-bar {
+    flex-direction: column;
+  }
+
+  .brand-large {
+    font-size: 2rem;
+  }
+}

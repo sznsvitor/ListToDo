@@ -1,0 +1,65 @@
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.explore-card {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+
+  background: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.explore-card.completed {
+  opacity: .7;
+}
+
+.explore-card-id {
+  font-size: .75rem;
+  color: var(--text-muted);
+}
+
+.explore-card-title {
+  flex: 1;
+  font-size: .9rem;
+  line-height: 1.4;
+}
+
+.explore-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-import {
+  padding: .4rem .8rem;
+  border-radius: var(--radius-sm);
+
+  background: var(--green-600);
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.btn-import:hover:not(:disabled) {
+  background: var(--green-700);
+}
+
+.btn-import.imported {
+  background: var(--gray-200);
+  color: var(--gray-600);
+  cursor: default;
+}
+
+@media (max-width: 640px) {
+  .explore-grid {
+    grid-template-columns: 1fr;
+  }
+}
